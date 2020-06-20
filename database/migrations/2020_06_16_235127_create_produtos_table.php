@@ -17,7 +17,11 @@ class CreateProdutosTable extends Migration
             $table->id();
             $table->string('nome_produto');
             $table->string('descricao');
+            $table->string('imagem_produto');
+            $table->integer('vendedor');
+            $table->integer('tipo_produto');
             $table->float('valor_produto');
+            $table->float('peso_produto');
             $table->timestamps();
         });
     }

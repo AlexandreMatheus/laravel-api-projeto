@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProdutosController extends Controller
+class VendedoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        return \App\Produtos::all();
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class ProdutosController extends Controller
      */
     public function store(Request $request)
     {
-        return \App\Produtos::create($request->all());
+        return \App\Vendedores::create($request->all());
     }
 
     /**
@@ -45,9 +45,7 @@ class ProdutosController extends Controller
      */
     public function show($id)
     {
-        $produto = \App\Produtos::find($id);
-        $produto['vendedor'] = \App\Vendedores::find($id);
-        return response()->json($produto);
+        return \App\Vendedores::find($id);
     }
 
     /**
@@ -81,10 +79,6 @@ class ProdutosController extends Controller
      */
     public function destroy($id)
     {
-        $produto = \App\Produtos::find(1);
-
-        if ($produto) {
-            $produto->delete();
-        }
+        //
     }
 }

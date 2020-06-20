@@ -18,4 +18,6 @@ Route::group(['middleware' => 'cors'], function() {
     });
 
     Route::resource('produtos', 'ProdutosController')->middleware('cors');
+    Route::resource('vendedores', 'VendedoresController')->middleware('cors');
+
 });
