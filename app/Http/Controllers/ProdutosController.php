@@ -81,7 +81,7 @@ class ProdutosController extends Controller
      */
     public function destroy($id)
     {
-        $produto = \App\Produtos::find(1);
+        $produto = \App\Produtos::find($id);
 
         if ($produto) {
             $produto->delete();

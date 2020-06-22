@@ -13,7 +13,7 @@ class VendedoresController extends Controller
      */
     public function index()
     {
-        //
+        return \App\Vendedores::all();
     }
 
     /**
@@ -79,6 +79,10 @@ class VendedoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vendedor = \App\Vendedores::find($id);
+
+        if ($vendedor) {
+            $vendedor->delete();
+        }
     }
 }

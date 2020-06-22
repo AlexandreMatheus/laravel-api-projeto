@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('register', 'UserController@register');
+Route::post('login', 'UserController@login');
+Route::get('profile', 'UserController@getAuthenticatedUser');
+Route::post('tipoproduto', 'TipoProdutoController@store');
+Route::get('tipoproduto', 'TipoProdutoController@index');
+Route::delete('tipoproduto', 'TipoProdutoController@destroy');
+
+Route::resource('produtos', 'ProdutosController');
+Route::resource('vendedores', 'VendedoresController');
+Route::resource('pedidos', 'PedidosController');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
